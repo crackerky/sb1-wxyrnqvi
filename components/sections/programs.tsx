@@ -76,24 +76,24 @@ const Programs = () => {
   };
 
   return (
-    <section id="programs" className="py-20 bg-gray-50">
+    <section id="programs" className="py-16 sm:py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 sm:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">料金プラン</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">料金プラン</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               あなたの目標と予算に合わせて、最適なプランをお選びいただけます。
               すべてのプランで科学的根拠に基づいた指導を提供します。
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={index}
@@ -106,37 +106,37 @@ const Programs = () => {
             >
               <Card className={`relative h-full flex flex-col ${plan.popular ? 'border-2 border-purple-500' : ''}`}>
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-purple-500 text-white text-xs sm:text-sm px-3 sm:px-4 py-1 rounded-full font-medium">
                       人気プラン
                     </span>
                   </div>
                 )}
                 <CardHeader>
-                  <div className="flex justify-center mb-4">{plan.icon}</div>
-                  <CardTitle className="text-center">{plan.title}</CardTitle>
+                  <div className="flex justify-center mb-3 sm:mb-4">{plan.icon}</div>
+                  <CardTitle className="text-center text-lg sm:text-xl">{plan.title}</CardTitle>
                   <div className="text-center mt-2">
-                    <span className="text-3xl font-bold">{plan.price}</span>
+                    <span className="text-2xl sm:text-3xl font-bold">{plan.price}</span>
                     <span className="text-gray-600 ml-1">/月</span>
                   </div>
-                  <CardDescription className="text-center mt-2">
+                  <CardDescription className="text-center mt-2 text-sm sm:text-base">
                     {plan.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 sm:space-y-3">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
+                        <span className="text-xs sm:text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
-                <CardFooter className="mt-auto pt-6">
+                <CardFooter className="mt-auto pt-4 sm:pt-6">
                   <Button 
                     asChild 
-                    className="w-full h-12"
+                    className="w-full h-10 sm:h-12 text-sm sm:text-base"
                     variant={plan.popular ? "default" : "outline"}
                   >
                     <Link href="#contact">無料カウンセリングを予約する</Link>
@@ -147,12 +147,12 @@ const Programs = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">
+        <div className="mt-12 sm:mt-16 text-center">
+          <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
             まずは無料カウンセリングで、あなたの目標と現状をお聞かせください。
             最適なプランをご提案させていただきます。
           </p>
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
             <Link href="#contact">無料カウンセリングを予約する</Link>
           </Button>
         </div>
