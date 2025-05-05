@@ -75,26 +75,28 @@ const Hero = () => {
         >
           <motion.div 
             variants={item}
-            className="flex items-center justify-center gap-12 mb-16"
+            className="flex items-center justify-center gap-3 sm:gap-8 md:gap-12 mb-8 sm:mb-16"
           >
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="hidden sm:block"
             >
-              <Dumbbell className="h-16 w-16 text-blue-400" />
+              <Dumbbell className="h-10 w-10 sm:h-16 sm:w-16 text-blue-400" />
             </motion.div>
-            <span className="text-7xl md:text-8xl tracking-tight font-bold">Evolvix</span>
+            <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight font-bold">Evolvix</span>
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="hidden sm:block"
             >
-              <Dumbbell className="h-16 w-16 text-blue-400" />
+              <Dumbbell className="h-10 w-10 sm:h-16 sm:w-16 text-blue-400" />
             </motion.div>
           </motion.div>
 
           <motion.h1 
             variants={item} 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 sm:mb-8 tracking-tight"
           >
             <span className="block mb-2">あなたの<span className="text-blue-400 inline-block hover:scale-110 transition-transform">成功体験</span>を、</span>
             <span className="relative inline-block">
@@ -110,17 +112,17 @@ const Hero = () => {
           
           <motion.p 
             variants={item} 
-            className="text-lg md:text-xl opacity-90 mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
+            className="text-base sm:text-lg md:text-xl opacity-90 mb-8 sm:mb-12 max-w-2xl mx-auto font-medium leading-relaxed"
           >
             筋トレ×栄養学×目標達成マインドで<br className="hidden sm:block" />
             <span className="text-blue-400">人生を変える。</span>
           </motion.p>
           
-          <motion.div variants={item} className="flex flex-col sm:flex-row gap-6 justify-center">
+          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <Button 
               asChild 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 relative overflow-hidden group"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 relative overflow-hidden group"
             >
               <Link href="#contact">
                 <span className="relative z-10">無料カウンセリングを予約</span>
@@ -136,7 +138,7 @@ const Hero = () => {
               asChild 
               size="lg" 
               variant="outline" 
-              className="bg-white/10 text-white border-white hover:bg-white/20 text-lg px-8 py-6"
+              className="bg-white/10 text-white border-white hover:bg-white/20 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6"
             >
               <Link href="#programs">プログラムを見る</Link>
             </Button>
@@ -157,7 +159,7 @@ const Hero = () => {
         }}
       >
         <Link href="#services" aria-label="Scroll down">
-          <ArrowDownCircle className="h-12 w-12 text-white hover:text-blue-400 transition-colors" />
+          <ArrowDownCircle className="h-8 w-8 sm:h-12 sm:w-12 text-white hover:text-blue-400 transition-colors" />
         </Link>
       </motion.div>
     </section>
