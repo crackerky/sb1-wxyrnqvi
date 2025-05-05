@@ -38,17 +38,17 @@ const FaqSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">よくある質問</h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             お客様からよくいただくご質問とその回答をまとめました。
             他にもご不明点があれば、お気軽にお問い合わせください。
           </p>
@@ -65,9 +65,11 @@ const FaqSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <AccordionItem value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                  <AccordionTrigger className="text-left text-sm sm:text-base py-3 sm:py-4">
+                    {faq.question}
+                  </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-gray-600">{faq.answer}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{faq.answer}</p>
                   </AccordionContent>
                 </AccordionItem>
               </motion.div>
