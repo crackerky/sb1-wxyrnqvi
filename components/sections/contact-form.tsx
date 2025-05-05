@@ -79,17 +79,17 @@ const ContactForm = () => {
   }
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-16 sm:py-20">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">お問い合わせ・申し込み</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">お問い合わせ・申し込み</h2>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             無料カウンセリングの予約や、サービスに関するお問い合わせはこちらからお願いします。
             48時間以内にご連絡いたします。
           </p>
@@ -103,18 +103,18 @@ const ContactForm = () => {
             transition={{ duration: 0.7 }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>お名前</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">お名前</FormLabel>
                         <FormControl>
-                          <Input placeholder="山田 太郎" {...field} />
+                          <Input placeholder="山田 太郎" {...field} className="text-sm sm:text-base h-9 sm:h-10" />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-xs sm:text-sm" />
                       </FormItem>
                     )}
                   />
@@ -124,27 +124,27 @@ const ContactForm = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>メールアドレス</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">メールアドレス</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="your-email@example.com" {...field} />
+                          <Input type="email" placeholder="your-email@example.com" {...field} className="text-sm sm:text-base h-9 sm:h-10" />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-xs sm:text-sm" />
                       </FormItem>
                     )}
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <FormField
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>電話番号</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">電話番号</FormLabel>
                         <FormControl>
-                          <Input type="tel" placeholder="090-1234-5678" {...field} />
+                          <Input type="tel" placeholder="090-1234-5678" {...field} className="text-sm sm:text-base h-9 sm:h-10" />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-xs sm:text-sm" />
                       </FormItem>
                     )}
                   />
@@ -154,23 +154,23 @@ const ContactForm = () => {
                     name="program"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>ご興味のあるプログラム</FormLabel>
+                        <FormLabel className="text-sm sm:text-base">ご興味のあるプログラム</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="text-sm sm:text-base h-9 sm:h-10">
                               <SelectValue placeholder="プログラムを選択" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="training">パーソナルトレーニング</SelectItem>
-                            <SelectItem value="nutrition">栄養指導</SelectItem>
-                            <SelectItem value="mindset">メンタルコーチング</SelectItem>
-                            <SelectItem value="group">グループトレーニング</SelectItem>
-                            <SelectItem value="all">すべて</SelectItem>
-                            <SelectItem value="not-sure">まだ決めていない</SelectItem>
+                            <SelectItem value="training" className="text-sm sm:text-base">パーソナルトレーニング</SelectItem>
+                            <SelectItem value="nutrition" className="text-sm sm:text-base">栄養指導</SelectItem>
+                            <SelectItem value="mindset" className="text-sm sm:text-base">メンタルコーチング</SelectItem>
+                            <SelectItem value="group" className="text-sm sm:text-base">グループトレーニング</SelectItem>
+                            <SelectItem value="all" className="text-sm sm:text-base">すべて</SelectItem>
+                            <SelectItem value="not-sure" className="text-sm sm:text-base">まだ決めていない</SelectItem>
                           </SelectContent>
                         </Select>
-                        <FormMessage />
+                        <FormMessage className="text-xs sm:text-sm" />
                       </FormItem>
                     )}
                   />
@@ -181,18 +181,19 @@ const ContactForm = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>メッセージ</FormLabel>
+                      <FormLabel className="text-sm sm:text-base">メッセージ</FormLabel>
                       <FormControl>
                         <Textarea 
                           placeholder="ご質問や目標、現在の状況などをお知らせください" 
-                          rows={5} 
+                          rows={4} 
                           {...field} 
+                          className="text-sm sm:text-base"
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs sm:text-sm">
                         目標や現在のトレーニング状況、健康状態などをお知らせいただくと、より具体的なご提案が可能です。
                       </FormDescription>
-                      <FormMessage />
+                      <FormMessage className="text-xs sm:text-sm" />
                     </FormItem>
                   )}
                 />
@@ -201,27 +202,32 @@ const ContactForm = () => {
                   control={form.control}
                   name="consent"
                   render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormItem className="flex flex-row items-start space-x-2 sm:space-x-3 space-y-0">
                       <FormControl>
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
                           id="consent"
+                          className="mt-1"
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
-                        <FormLabel htmlFor="consent">
+                        <FormLabel htmlFor="consent" className="text-sm">
                           <span>
                             <a href="/privacy-policy" className="text-primary hover:underline">プライバシーポリシー</a>に同意します
                           </span>
                         </FormLabel>
-                        <FormMessage />
+                        <FormMessage className="text-xs sm:text-sm" />
                       </div>
                     </FormItem>
                   )}
                 />
 
-                <Button type="submit" className="w-full md:w-auto" size="lg">
+                <Button 
+                  type="submit" 
+                  className="w-full md:w-auto text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3" 
+                  size="lg"
+                >
                   送信する
                 </Button>
               </form>
