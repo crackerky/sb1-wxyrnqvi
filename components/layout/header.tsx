@@ -65,15 +65,15 @@ const Header = () => {
         isScrolled ? 'bg-background/95 backdrop-blur-sm border-b' : 'bg-transparent'
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 py-4">
+      <div className="container mx-auto px-4 md:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <Dumbbell className="h-8 w-8 text-primary" />
-            <span className="font-bold text-xl">Evolvix</span>
+          <Link href="/" className="flex items-center space-x-2 z-20">
+            <Dumbbell className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <span className="font-bold text-lg sm:text-xl">Evolvix</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -83,7 +83,7 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <Button asChild>
+            <Button asChild size="sm" className="text-sm px-3 py-1 h-8 sm:h-9">
               <Link href="#contact">お問い合わせ</Link>
             </Button>
           </nav>
@@ -92,11 +92,11 @@ const Header = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden"
+            className="md:hidden z-20"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </Button>
         </div>
       </div>
@@ -107,20 +107,20 @@ const Header = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 top-[72px] bg-background z-40 md:hidden"
+          className="fixed inset-0 top-[56px] sm:top-[72px] bg-background z-40 md:hidden"
         >
-          <nav className="flex flex-col items-center justify-center h-full space-y-8 p-4">
+          <nav className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 p-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xl font-medium hover:text-primary"
+                className="text-lg sm:text-xl font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <Button asChild className="w-full" onClick={() => setIsOpen(false)}>
+            <Button asChild className="w-full text-sm sm:text-base" onClick={() => setIsOpen(false)}>
               <Link href="#contact">お問い合わせ</Link>
             </Button>
           </nav>
